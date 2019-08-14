@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 float suma(float a, float b){
 	return a+b;
 }

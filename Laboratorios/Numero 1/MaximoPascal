@@ -1,0 +1,15 @@
+program maximo;
+var
+	valorUsuario,valorUsuariodos,maximo:real;
+begin
+	write('Intoduzca el primer numero entero: ');
+	readln(valorUsuario);
+	write('Intoduzca el segundo numero entero: ');
+	readln(valorUsuario2);
+	if valorUsuario>valorUsuario2 then
+		begin
+			maximo:=valorUsuario
+		end;
+	else maximo:= valorUsuario2;
+	write('El valor maximo es: ',maximo);
+end.

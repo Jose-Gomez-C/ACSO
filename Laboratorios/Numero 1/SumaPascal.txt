@@ -1,0 +1,10 @@
+program suma;
+var
+        valorUsuariovalorUsuariodos:integer;
+begin
+        write ('Introduzca el primer numero entero: ');
+        readln(valorUsuario);
+        write('Introduzca el segundo numero entero: ');
+        readln(valorUsuariodos);
+        write('Gracias la suma es: ',valorUsuario+valorUsuario2);
+end.
