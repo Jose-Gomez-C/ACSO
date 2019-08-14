@@ -1,6 +1,7 @@
 program suma;
 var
-        valorUsuariovalorUsuariodos:integer;
+        valorUsuario : Integer;
+        valorUsuario2 : Integer;
 begin
         write ('Introduzca el primer numero entero: ');
         readln(valorUsuario);
