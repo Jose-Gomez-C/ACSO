@@ -1,11 +1,11 @@
 program suma;
 var
-        valorUsuario : Integer;
-        valorUsuario2 : Integer;
+valorUsuario, numeroDos : integer;
 begin
-        write ('Introduzca el primer numero entero: ');
-        readln(valorUsuario);
-        write('Introduzca el segundo numero entero: ');
-        readln(valorUsuariodos);
-        write('Gracias la suma es: ',valorUsuario+valorUsuario2);
+        writeln('Introduzca el primer numero entero: ');
+        read(valorUsuario);
+        writeln('Introduzca el segundo numero entero: ');
+        read(numeroDos);
+        writeln('Gracias la suma es: ',valorUsuario+numeroDos);
 end.
+
