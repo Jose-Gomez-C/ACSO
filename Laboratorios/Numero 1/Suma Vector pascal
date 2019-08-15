@@ -1,20 +1,38 @@
 program sumaVector;
-function suma;
-
-function leerVector
 type
-arreglo = Array[0..10] of integer;
+	arreglo = Array[0..10] of integer;
+function suma(a,b: integer):integer;
+	begin
+		suma := a+b;
+	end;
+function imprimirVector( vector:arreglo):integer;
+	var 
+	x: integer;
+	begin
+		write('El vector es');
+		for x:=0 to 10 do begin
+			write(vector[x]);
+		end;
+	end;
+function leerVector:integer;
+
 var
 vector:arreglo;
-suma : integer;
+total : integer;
 i : integer;
 begin
-	suma:=0;
+	total:=0;
 	write('Intorduzca los valores del arreglo recuerde que solo son 10 datos');
 	for i:=0 to 10 do begin
         write('dato numero ',i+1);
-        readln(arreglo[i]);
-        suma:=
+        readln(vector[i]);
+        total:=suma(total,vector[i]);
     end;
-        write('El valor minimo es:', minimo:0:4);
-end.
+        write(imprimirVector(vector));
+		leerVector:=total;
+end;
+procedure main;
+	begin
+		write('la suma es',leerVector);
+	end:
+	
