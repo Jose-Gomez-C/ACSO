@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 int sumaNumeros(int a,int b){
 	return a+b;
 }

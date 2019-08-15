@@ -8,7 +8,7 @@ i : integer;
 begin
         minimo:=999999999;
         for i:=0 to 10 do begin
-                write('Intorduzca los valores del arreglo recuerde que solo son 10 datos ');
+                write('Intorduzca los valores del arreglo recuerde que solo son 10 datos');
                 readln(arreglo[i]);
                 if minimo>arreglo[i] then
                         begin
@@ -17,3 +17,4 @@ begin
         end;
         write('El valor minimo es:', minimo:0:4);
 end.
+

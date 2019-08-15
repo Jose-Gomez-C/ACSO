@@ -1,10 +1,12 @@
 #include<stdio.h>
-int main() {
-int valorUsuario, valorUsuario2;
-printf("Introduzca el primer numero entero: ");
-scanf("%d",&valorUsuario);
-printf("Introduzca el segundo numero entero: ");
-scanf("%d",&valorUsuario2);
-printf("Gracias la suma es: %d",valorUsuario+valorUsuario2);
+#include<stdlib.h>
+int main(){
+int valorU, valorU2;
+printf("introduzca el primer numero entero: ");
+scanf("%d",&valorU);
+printf("Introduzca el segundo numero entero; ");
+scanf("%d",&valorU2);
+printf("Gracia la suma es: %d\n",valorU+valorU2);
 return 0;
 }
+

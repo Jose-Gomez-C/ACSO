@@ -1,0 +1,20 @@
+program sumaVector;
+function suma;
+
+function leerVector
+type
+arreglo = Array[0..10] of integer;
+var
+vector:arreglo;
+suma : integer;
+i : integer;
+begin
+	suma:=0;
+	write('Intorduzca los valores del arreglo recuerde que solo son 10 datos');
+	for i:=0 to 10 do begin
+        write('dato numero ',i+1);
+        readln(arreglo[i]);
+        suma:=
+    end;
+        write('El valor minimo es:', minimo:0:4);
+end.

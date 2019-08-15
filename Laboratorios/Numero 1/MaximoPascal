@@ -1,4 +1,4 @@
-program maximo;
+rogram maximo;
 var
         valorUsuario,numeroDos,maximo:real;
 begin
@@ -13,3 +13,4 @@ begin
         else maximo:= numeroDos;
         write('El valor maximo es: ',maximo:0:4);
 end.
+
