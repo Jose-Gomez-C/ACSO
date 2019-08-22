@@ -23,7 +23,7 @@ total : integer;
 i : integer;
 begin
         total:=0;
-        write('Intorduzca los valores del arreglo recuerde que solo son 10 dato$
+        write('Intorduzca los valores del arreglo recuerde que solo son 10 datos');
         for i:=0 to 9 do begin
                 write('dato numero ',i+1);
                 readln(vector[i]);

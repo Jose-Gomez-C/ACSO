@@ -1,0 +1,75 @@
+program calculadora;
+var 
+flag:Real;
+function suma(a,b: real):real;
+        begin
+                suma := a+b;
+        end;
+function resta(a,b: real):real;
+        begin
+                resta := a-b;
+        end;
+function multiplicacion(a,b: real):real;
+        begin
+                multiplicacion := a*b;
+        end;
+function division(a,b: real):real;
+        begin
+			if b=0 then 
+				begin 
+					division:=0;
+				end
+			else division := a/b;
+        end;
+function menu:real;
+		var
+			opcion:integer;
+			numeroUno,numeroDos:real;
+		begin
+			write('Bienvenido que operacion desea hacer.\n  Oprima uno para sumar dos numeros enteros enteros.\n  Oprima dos para restar dos numeros enteros.\n  Oprima tres para multiplicar dos numeros enteros.\n  Oprima cuatro para dividir dos numeros enteros.\n  oprima cero para salir.');
+			readln(opcion);
+			while not (opcion=0) do 
+				begin 
+					if opcion=1 then
+						begin
+							write('Ingrese el primer numero a sumar.');
+							readln(numeroUno);
+							write('Ingrese el primer numero a sumar.');
+							readln(numeroDos);
+							write('la suma fue',suma(numeroUno,numeroDos));
+						end;
+					if opcion=2 then
+						begin
+							write('Ingrese el primer numero a restar.');
+							readln(numeroUno);
+							write('Ingrese el primer numero a restar.');
+							readln(numeroDos);
+							write('la resta fue',resta(numeroUno,numeroDos));
+						end;
+					if opcion=3 then
+						begin
+							write('Ingrese el primer numero a multiplicar.');
+							readln(numeroUno);
+							write('Ingrese el primer numero a multiplicar.');
+							readln(numeroDos);
+							write('la multiplicacion fue',multiplicacion(numeroUno,numeroDos));
+						end;
+					if opcion=4 then
+						begin
+							write('Ingrese el primer numero a dividir.');
+							readln(numeroUno);
+							write('Ingrese el primer numero a dividir.');
+							readln(numeroDos);
+							write('la division fue',division(numeroUno,numeroDos));
+						end;
+				end;
+		end;
+procedure main(flag:real);
+	begin 
+		write(menu);
+	end;
+begin
+	flag:=0;
+	main(flag);
+end.
+		
