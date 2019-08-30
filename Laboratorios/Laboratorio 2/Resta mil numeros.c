@@ -3,6 +3,7 @@
 void restar(char numero1[1000],char numero2[1000],int cerosIzquierdaLista1, int cerosIzquierdaLista2){
 	int i=strlen(numero1)-1,j,posicion=999,lleva=0,entro1,entero2;
 	char resultado[1000];
+	memset(resultado,'\0',1000);
 	for (j=strlen(numero2)-1;j>=cerosIzquierdaLista2;j--){
 		entro1=numero1[i]-48;
 		entero2=numero2[j]-48;
@@ -27,16 +28,28 @@ void restar(char numero1[1000],char numero2[1000],int cerosIzquierdaLista1, int 
 			i--;
 			posicion--;
 		}else{
-			printf("%d",entro1-lleva+48);
-			resultado[posicion]=entro1-entero2-lleva+48;
+			resultado[posicion]=entro1-lleva+48;
 			lleva=0;
 			i--;
 			posicion--;
 		}
 		
 	}
-	printf("%",resultado[998]);
-	imprimirNumero(resultado);
+	imprimirResultado(resultado);
+}
+void imprimirResultado(char lista[1000]){
+	int i, empezar=0;
+	for(i=0; i<1000;i++){
+		if(empezar==0){
+			if (lista[i]!=0){
+				empezar=1;
+			}
+		}
+		if (empezar==1){
+			printf("%c",lista[i]);
+		}
+	}
+	printf("\n");
 }
 int contarCeros(char lista[1000]){
 	int numeroCerosIzquierda=0,i;
