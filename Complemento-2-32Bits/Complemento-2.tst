@@ -1,0 +1,35 @@
+load Complemento-2.hdl,
+output-file Complemento-2.out,
+output-list a b c d carry s1 s2 s3 s4 scarry;
+set a 0, set b 0, set c	0, set d 0, set carry 0, eval, output;
+set a 0, set b 0, set c	0, set d 0, set carry 1, eval, output;
+set a 0, set b 0, set c	0, set d 1, set carry 0, eval, output;
+set a 0, set b 0, set c	0, set d 1, set carry 1, eval, output;
+set a 0, set b 0, set c	1, set d 0, set carry 0, eval, output;
+set a 0, set b 0, set c	1, set d 0, set carry 1, eval, output;
+set a 0, set b 0, set c	1, set d 1, set carry 0, eval, output;
+set a 0, set b 0, set c	1, set d 1, set carry 1, eval, output;
+set a 0, set b 1, set c	0, set d 0, set carry 0, eval, output;
+set a 0, set b 1, set c	0, set d 0, set carry 1, eval, output;
+set a 0, set b 1, set c	0, set d 1, set carry 0, eval, output;
+set a 0, set b 1, set c	0, set d 1, set carry 1, eval, output;
+set a 0, set b 1, set c	1, set d 0, set carry 0, eval, output;
+set a 0, set b 1, set c	1, set d 0, set carry 1, eval, output;
+set a 0, set b 1, set c	1, set d 1, set carry 0, eval, output;
+set a 0, set b 1, set c	1, set d 1, set carry 1, eval, output;
+set a 1, set b 0, set c	0, set d 0, set carry 0, eval, output;
+set a 1, set b 0, set c	0, set d 0, set carry 1, eval, output;
+set a 1, set b 0, set c	0, set d 1, set carry 0, eval, output;
+set a 1, set b 0, set c	0, set d 1, set carry 1, eval, output;
+set a 1, set b 0, set c	1, set d 0, set carry 0, eval, output;
+set a 1, set b 0, set c	1, set d 0, set carry 1, eval, output;
+set a 1, set b 0, set c	1, set d 1, set carry 0, eval, output;
+set a 1, set b 0, set c	1, set d 1, set carry 1, eval, output;
+set a 1, set b 1, set c	0, set d 0, set carry 0, eval, output;
+set a 1, set b 1, set c	0, set d 0, set carry 1, eval, output;
+set a 1, set b 1, set c	0, set d 1, set carry 0, eval, output;
+set a 1, set b 1, set c	0, set d 1, set carry 1, eval, output;
+set a 1, set b 1, set c	1, set d 0, set carry 0, eval, output;
+set a 1, set b 1, set c	1, set d 0, set carry 1, eval, output;
+set a 1, set b 1, set c	1, set d 1, set carry 0, eval, output;
+set a 1, set b 1, set c	1, set d 1, set carry 1, eval, output;

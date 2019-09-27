@@ -1,0 +1,60 @@
+CHIP Complemento-2{
+	IN a,b,c,d,carry;
+	OUT s1,s2,s3,s4,scarry;
+	PARTS:
+	Not(in=a,out=notA);
+	Not(in=b,out=notB);
+	Not(in=c,out=notC);
+	Not(in=d,out=notD);
+	Not(in=carry,out=notCarry);
+	
+	//s1
+	And(a=notA,b=notCarry,out=cableNotaANDNotCarry);
+	And(a=notA,b=d,out=cableNotaANDd);
+	And(a=notA,b=c,out=cableNotaANDc);
+	And(a=notA,b=b,out=cableNotaANDb);
+	
+	And(a=a,b=notB,out=cableaANDNotb);
+	And(a=notC,b=notD,out=cableNotcANDNotd);
+	And(a=cableNotcANDNotd,b=cableaANDNotb,out=cablea1);
+	And(a=cablea1,b=carry,out=cableLargo);
+	
+	Or(a=cableNotaANDNotCarry,b=cableNotaANDd,out=cable1);
+	Or(a=cableNotaANDc,b=cableNotaANDb,out=cable2);
+	Or(a=cable1,b=cable2,out=cable10);
+	Or(a=cableLargo,b=cable10,out=s1);
+	
+	//s2
+	And(a=notB,b=notCarry,out=cableNotbANDNotCarry);
+	And(a=notB,b=d,out=cableNotbANDd);
+	And(a=notB,b=c,out=cableNotbANDc);
+	
+	And(a=b,b=notC,out=cablebANDNotc);
+	And(a=notD,b=carry,out=cableNotDANDcarry);
+	And(a=cablebANDNotc,b=cableNotDANDcarry,out=cableAlgo);
+	
+	Or(a=cableNotbANDNotCarry,b=cableNotbANDd,out=cable3);
+	Or(a=cableNotbANDc,b=cableAlgo,out=cable4);
+	Or(a=cable3,b=cable4,out=s2);
+	
+	
+	//s3
+	
+	And(a=notC,b=notCarry, out=cableNotcANDNotCarry);
+	And(a=notC,b=d,out=cableNotcANDd);
+	And(a=c,b=notD,out=cablecANDNotd);
+	And(a=cablecANDNotd,b=carry,out=cable11);
+	
+	Or(a=cableNotcANDNotCarry,b=cableNotcANDd,out=cable12);
+	Or(a=cable12,b=cable11,out=s3);
+	
+	//s4
+	Xor(a=d,b=carry,out=dXorCarry);
+	Not(in=dXorCarry,out=s4);
+	
+	//carry
+	And(a=notA,b=notB,out=NotaANDnotB);
+	And(a=notC,b=notD,out=NotdANDNotD);
+	And(a=NotaANDnotB,b=NotdANDNotD,out=cable5);
+	And(a=cable5,b=carry,out=scarry);
+}
