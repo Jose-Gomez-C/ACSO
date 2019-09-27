@@ -1,0 +1,9 @@
+CHIP y{
+	IN c[4];
+	OUT d[4];
+	PARTS:
+	Not(in=c[0],out=d[0]);
+	Not(in=c[1],out=d[1]);
+	Not(in=c[2],out=d[2]);
+	Not(in=c[3],out=d[3]);
+}

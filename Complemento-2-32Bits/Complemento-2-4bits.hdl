@@ -1,4 +1,4 @@
-CHIP Complemento-2{
+CHIP Complemento-2-4bits{
 	IN a,b,c,d,carry;
 	OUT s1,s2,s3,s4,scarry;
 	PARTS:
