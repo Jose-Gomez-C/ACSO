@@ -1,0 +1,15 @@
+CHIP Complemento{
+	IN primero[16], segundo[16];
+	OUT sPrimero[16], sSegundo[16];
+	PARTS:
+	Not(in=primero[0],out=NotA);
+	Or(a=primero[0],b=NotA,out=true);
+	Complemento-2-4bits(a=segundo[0], b=segundo[1], c=segundo[2], d=segundo[3], carry=true, s1=sSegundo[0], s2=sSegundo[1], s3=sSegundo[2],s4=sSegundo[3],scarry=cableCarry);
+	Complemento-2-4bits(a=segundo[4], b=segundo[5], c=segundo[6], d=segundo[7], carry=cableCarry, s1=sSegundo[4], s2=sSegundo[5], s3=sSegundo[6],s4=sSegundo[7],scarry=cableCarry1);
+	Complemento-2-4bits(a=segundo[8], b=segundo[9], c=segundo[10], d=segundo[11], carry=cableCarry1, s1=sSegundo[8], s2=sSegundo[9], s3=sSegundo[10],s4=sSegundo[11],scarry=cableCarry2);
+	Complemento-2-4bits(a=segundo[12], b=segundo[13], c=segundo[14], d=segundo[15], carry=cableCarry2, s1=sSegundo[12], s2=sSegundo[13], s3=sSegundo[14],s4=sSegundo[15],scarry=cableCarry3);
+	Complemento-2-4bits(a=primero[0], b=primero[1], c=primero[2], d=primero[3], carry=cableCarry3, s1=sPrimero[0], s2=sPrimero[1], s3=sPrimero[2],s4=sPrimero[3],scarry=cableCarry4);
+	Complemento-2-4bits(a=primero[4], b=primero[5], c=primero[6], d=primero[7], carry=cableCarry4, s1=sPrimero[4], s2=sPrimero[5], s3=sPrimero[6],s4=sPrimero[7],scarry=cableCarry5);
+	Complemento-2-4bits(a=primero[8], b=primero[9], c=primero[10], d=primero[11], carry=cableCarry5, s1=sPrimero[8], s2=sPrimero[9], s3=sPrimero[10],s4=sPrimero[11],scarry=cableCarry6);
+	Complemento-2-4bits(a=primero[12], b=primero[13], c=primero[14], d=primero[15], carry=cableCarry6, s1=sPrimero[12], s2=sPrimero[13], s3=sPrimero[14],s4=sPrimero[15],scarry=sCarry);
+}
