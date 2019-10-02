@@ -1,0 +1,119 @@
+CHIP restaComplemto-2-4Bits{
+	IN a,b,c,d,carry;
+	OUT s1,s2,scarry; 
+	PARTS:
+	Not(in=a,out=NotA);
+	Not(in=b,out=NotB);
+	Not(in=c,out=NotC);
+	Not(in=d,out=NotD);
+	Not(in=carry,out=Notcarry);
+	
+	And(a=NotA,b=NotC,out=cable1);
+	And(a=d,b=carry,out=cable2);
+	And(a=cable1,b=cable2,out=cable3);
+	
+	And(a=NotA,b=NotB,out=cable4);
+	And(a=c,b=NotD,out=cable5);
+	And(a=cable4,b=cable5,out=cable6);
+	
+	And(a=NotA, b=c, out=cable7);
+	And(a=cable7, b=Notcarry, out=cable8);
+	
+	And(a=NotA, b=b, out=cable9);
+	And(a=NotC, b=carry, out=cable10);
+	And(a=cable9, b=cable10,out=cable11);
+	
+	And(a=NotA, b=b, out=cable12);
+	And(a=NotC, b=d, out=cable13);
+	And(a=cable12, b=cable13, out=cable14);
+	
+	And(a=a,b=NotB, out=cable15);
+	And(a=NotC, b=NotD , out = cable16);
+	And(a=cable15, b=cable16, out= cable17);
+	
+	And(a=a, b= NotB, out=cable18);
+	And(a=NotC, b=Notcarry,out= cable19);
+	And(a=cable18, b=cable19,out=cable20);
+	
+	And(a=a, b=NotC,out=cable21);
+	And(a=NotD, b=Notcarry,out=cable22);
+	And(a=cable21, b=cable22,out=cable23);
+	
+	And(a=a, b=c,out=cable24);
+	And(a=cable24, b=d,out=cable25);
+	
+	And(a=a, b=b , out=cable26);
+	And(a=c, b=carry , out=cable27);
+	And(a=cable26, b=cable27 , out=cable28);
+		
+	Or(a=cable3, b=cable6,out=cable29);
+	
+	Or(a=cable8, b= cable11, out=cable30);
+	
+	Or(a=cable14, b=cable17, out=cable31);
+	
+	Or(a=cable20, b=cable23,out=cable32);
+	
+	Or(a=cable25, b=cable28, out= cable33);
+	
+	
+	Or(a= cable29,b=cable30, out= cable34);
+	
+	Or(a= cable34, b= cable31, out= cable35);
+	
+	Or(a= cable32, b= cable33, out= cable36);
+	
+	Or(a=cable35, b=cable36,out=s1);
+	
+	//s2
+	And(a=NotB, b=NotD , out=s2cable1);
+	And(a=s2cable1, b=carry , out=s2cable2);
+	
+	And(a=NotB, b=d , out=s2cable3);
+	And(a=s2cable3, b=Notcarry , out=s2cable4);
+	
+	And(a=b, b=NotD, out=s2cable5);
+	And(a=s2cable5, b=Notcarry, out=s2cable6);
+	
+	And(a=b, b=d , out=s2cable7);
+	And(a=s2cable7, b=carry , out=s2cable8);
+	
+	
+	Or(a=s2cable2, b=s2cable4, out= s2cable12);
+	
+	Or(a=s2cable6, b=s2cable8, out= s2cable13);
+	
+	Or(a=s2cable12, b=s2cable13, out= s2);
+	
+	//carry
+	And(a=c, b=d, out= carrycable1);
+	And(a=carrycable1, b=carry, out= carrycable2);
+	
+	And(a=b, b=c, out= carrycable3);
+	And(a=carrycable3, b=carry, out= carrycable4);
+	
+	And(a=a, b=d, out= carrycable5);
+	And(a=carrycable5, b=carry, out= carrycable6);
+	
+	And(a=a, b=NotB, out= carrycable7);
+	And(a=carrycable7, b=c, out= carrycable8);
+	
+	And(a=a, b=c, out= carrycable9);
+	And(a=carrycable9, b=NotD, out= carrycable10);
+	
+	And(a=a, b=b, out= carrycable11);
+	And(a=carrycable11, b=carry, out= carrycable12);
+	
+	And(a=a, b=b, out= carrycable13);
+	And(a=NotC, b=d, out= carrycable14);
+	And(a=carrycable13, b=carrycable14, out= carrycable15);
+	
+	Or(a=carrycable2, b=carrycable4, out= carrycable16);
+	Or(a=carrycable6, b=carrycable8, out= carrycable17);
+	
+	Or(a=carrycable10, b=carrycable12, out= carrycable18);
+	Or(a=carrycable18, b=carrycable15, out= carrycable19);
+	
+	Or(a=carrycable16, b=carrycable17, out= carrycable20);
+	Or(a=carrycable20, b=carrycable19, out= scarry);	
+}
