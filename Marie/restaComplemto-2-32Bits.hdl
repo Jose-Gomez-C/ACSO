@@ -1,8 +1,8 @@
-CHIP restaComplemento-2-32bits{
-	IN primero[16],atrasPrimero[16],segundo[16],atrasSegundo[16];
+CHIP restaComplemto-2-32Bits{
+	IN primero[16],atrasPrimero[16],segundo[16],atra ccccccccccsSegundo[16];
 	OUT salida[16],atrasatrasSalida[16];
 	PARTS:
-	Complemento(primero=segundo[0..15],segundo=atrasSegundo[0..15],sPrimero=complemto[0..16],atrasComplemto[0..16]);
+	Complemento(primero=segundo,segundo=atrasSegundo,sPrimero=complemto[16],sSegundo=atrasComplemto[16]);
 	Not(in=primero[0],out=NotA);
 	And(a=primero[0], b=NotA,out=false);
 	restaComplemto-2-4Bits(a=atrasPrimero[0],b=atrasPrimero[1],c=atrasComplemto[0],d=atrasComplemto[1], carry=false, s1=atrasSalida[0],s2=atrasSalida[1], scarry=cablecarry);
@@ -21,3 +21,4 @@ CHIP restaComplemento-2-32bits{
 	restaComplemto-2-4Bits(a=primero[10],b=primero[11],c=complemto[10],d=complemto[11], carry=cablecarry4, s1=salida[10],s2=salida[11], scarry=cablecarry5);
 	restaComplemto-2-4Bits(a=primero[12],b=primero[13],c=complemto[12],d=complemto[13], carry=cablecarry5, s1=salida[12],s2=salida[13], scarry=cablecarry6);
 	restaComplemto-2-4Bits(a=primero[14],b=primero[15],c=complemto[14],d=complemto[15], carry=cablecarry6, s1=salida[14],s2=salida[15], scarry=cablecarry7);
+	}
